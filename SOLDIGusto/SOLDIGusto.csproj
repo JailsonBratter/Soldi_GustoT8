@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B9C9FB2-50A2-46C1-948A-1E4103046687}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SOLDIGusto</RootNamespace>
+    <AssemblyName>SOLDIGustoT8</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoBratter.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdicionarObs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdicionarObs.Designer.cs">
+      <DependentUpon>AdicionarObs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busca.Designer.cs">
+      <DependentUpon>Busca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Funcoes.cs" />
+    <Compile Include="Classes\Parametros.cs" />
+    <Compile Include="Comanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comanda.Designer.cs">
+      <DependentUpon>Comanda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracao.Designer.cs">
+      <DependentUpon>Configuracao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\ComandaAbertaDAO.cs" />
+    <Compile Include="DAO\ComandaControleDAO.cs" />
+    <Compile Include="DAO\ComandaDAO.cs" />
+    <Compile Include="DAO\ComandaItemDAO.cs" />
+    <Compile Include="DAO\ComandaItemObsDAO.cs" />
+    <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\ConfiguracaoDAO.cs" />
+    <Compile Include="DAO\DepartamentoDAO.cs" />
+    <Compile Include="DAO\GrupoDAO.cs" />
+    <Compile Include="DAO\ImpressaoDao.cs" />
+    <Compile Include="DAO\MercadoriaDAO.cs" />
+    <Compile Include="DAO\MotivoDAO.cs" />
+    <Compile Include="DAO\ObsDAO.cs" />
+    <Compile Include="DAO\OperadorDao.cs" />
+    <Compile Include="DAO\SpoolImpressoraDAO.cs" />
+    <Compile Include="DAO\SubGrupoDao.cs" />
+    <Compile Include="DAO\User.cs" />
+    <Compile Include="EmUso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmUso.Designer.cs">
+      <DependentUpon>EmUso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicializar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicializar.Designer.cs">
+      <DependentUpon>Inicializar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LimpaComanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LimpaComanda.Designer.cs">
+      <DependentUpon>LimpaComanda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaMesa.Designer.cs">
+      <DependentUpon>ListaMesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exit.Designer.cs">
+      <DependentUpon>Exit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensagem.Designer.cs">
+      <DependentUpon>Mensagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotivoCancelamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotivoCancelamento.Designer.cs">
+      <DependentUpon>MotivoCancelamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgCarregando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgCarregando.Designer.cs">
+      <DependentUpon>MsgCarregando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelecionaImpressora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionaImpressora.Designer.cs">
+      <DependentUpon>SelecionaImpressora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teclado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teclado.Designer.cs">
+      <DependentUpon>Teclado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transferir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transferir.Designer.cs">
+      <DependentUpon>Transferir.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdicionarObs.resx">
+      <DependentUpon>AdicionarObs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busca.resx">
+      <DependentUpon>Busca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comanda.resx">
+      <DependentUpon>Comanda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracao.resx">
+      <DependentUpon>Configuracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmUso.resx">
+      <DependentUpon>EmUso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicializar.resx">
+      <DependentUpon>Inicializar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LimpaComanda.resx">
+      <DependentUpon>LimpaComanda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaMesa.resx">
+      <DependentUpon>ListaMesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exit.resx">
+      <DependentUpon>Exit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensagem.resx">
+      <DependentUpon>Mensagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotivoCancelamento.resx">
+      <DependentUpon>MotivoCancelamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgCarregando.resx">
+      <DependentUpon>MsgCarregando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SelecionaImpressora.resx">
+      <DependentUpon>SelecionaImpressora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teclado.resx">
+      <DependentUpon>Teclado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transferir.resx">
+      <DependentUpon>Transferir.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\ComandaItemDAO.datasource" />
+    <None Include="Properties\DataSources\MercadoriaDAO.datasource" />
+    <None Include="Properties\DataSources\ObsDAO.datasource" />
+    <None Include="Properties\DataSources\SpoolImpressoraDAO.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_apagar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico-CadFecha.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-ComVazia3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico-CadAb.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-busca.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-busca1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-ConfirmPedido.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-menu.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-menu2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Exit.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Logout.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Cancel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Fecha.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-transferir.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-LimpaCom.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Config.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-ComUso.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Catg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Catg1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-CancelItens.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-CancelItem.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Com.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-ComVazia.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-ComVazia1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-ComVazia2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_arquivo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-ListaMesa.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Confirm.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-Confirm1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carregar4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-LimpaCom2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-ComUso2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon-transferir2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_CtgNEncontrada.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoBratter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_checkNull.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_checkNull2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkTrue2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif01.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif02.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LogoBratter.ico" />
+    <None Include="Resources\Ico_Next_botton1.png" />
+    <None Include="Resources\Ico_Next_top1.png" />
+    <None Include="Resources\Ico_Next_botton.png" />
+    <None Include="Resources\Ico_Next_top.png" />
+    <None Include="Resources\gif4.gif" />
+    <None Include="Resources\gif5.gif" />
+    <None Include="Resources\gif3.gif" />
+    <None Include="Resources\Img_Carregando.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
