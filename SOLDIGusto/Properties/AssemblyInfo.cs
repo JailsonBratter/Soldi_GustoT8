@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SOLDIGustoT8")]
 [assembly: AssemblyDescription("Soldi Gusto T8")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Bratter e Bocco Automação")]
+[assembly: AssemblyCompany("JGA Soluções em Tecnologia")]
 [assembly: AssemblyProduct("SOLDIGustoT8")]
-[assembly: AssemblyCopyright("Copyright Bratter e Bocco ©  2019")]
+[assembly: AssemblyCopyright("Copyright JGA Soluções ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // É possível especificar todos os valores ou usar como padrão os Números de Build e da Revisão
 // utilizando o "*" como mostrado abaixo:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.8.6")]
-[assembly: AssemblyFileVersion("2.0.8.6")]
+[assembly: AssemblyVersion("2.0.8.7")]
+[assembly: AssemblyFileVersion("2.0.8.7")]

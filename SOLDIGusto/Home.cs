@@ -679,16 +679,23 @@ namespace SOLDIGusto
                 byte[] buff = { 5 };
                 string RetornoBalanca = "";
 
-                if (port.IsOpen)
+                Thread.Sleep(30);
+                port.Write(buff, 0, 1);
+
+                Thread.Sleep(100);
+                RetornoBalanca = port.ReadExisting();
+
+
+                if (string.IsNullOrEmpty(RetornoBalanca))
                 {
-                    port.Write(buff, 0, 1);
+                    //port.Write(buff, 0, 1);
                     int tempo = 0;
-                    while (RetornoBalanca.Length == 0 || tempo < 50000)
+                    while (RetornoBalanca.Length == 0 || tempo < 100)
                     {
-                        tempo++;
                         RetornoBalanca += port.ReadExisting();
-                        if (tempo == 50000 && RetornoBalanca.Length == 0)
-                            RetornoBalanca = "0";
+                        //if (tempo == 50000 && RetornoBalanca.Length == 0)
+                        //    RetornoBalanca = "0";
+                        tempo++;
                     }
                     //port.Close();
                 }
@@ -709,8 +716,8 @@ namespace SOLDIGusto
             }
             finally
             {
-                //if (port != null && port.IsOpen)
-                //    port.Close();
+                if (port != null && port.IsOpen)
+                    port.Close();
             }
 
         }
