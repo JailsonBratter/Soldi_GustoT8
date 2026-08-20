@@ -666,13 +666,11 @@ namespace SOLDIGusto
 
                 if (port == null)
                 {
-                    MessageBox.Show($"Porta {Parametros.Porta_balanca} da balança fechada");
                     port = new SerialPort(Parametros.Porta_balanca, Parametros.Velocidade_porta, Parity.None, 8, StopBits.One);
                     port.Open();
                 }
                 if (!port.IsOpen )
                 {
-                    MessageBox.Show($"Porta {Parametros.Porta_balanca} da balança fechada");
                     port = new SerialPort(Parametros.Porta_balanca, Parametros.Velocidade_porta, Parity.None, 8, StopBits.One);
                     port.Open();
                 }
@@ -683,17 +681,14 @@ namespace SOLDIGusto
                 //peso
                 byte[] buff = { 5 };
                 //string RetornoBalanca = "";
-                MessageBox.Show($"Enviando comando para balança.");
 
                 port.Write(buff, 0, 1);
 
                 Thread.Sleep(1000);
                 string RetornoBalanca = port.ReadExisting();
-                MessageBox.Show($"Retorno da balança: {RetornoBalanca}");
 
                 if (string.IsNullOrEmpty(RetornoBalanca))
                 {
-                    MessageBox.Show($"Retorno Null");
                     int tempo = 0;
                     while (RetornoBalanca.Length == 0 || tempo < 100)
                     {
@@ -707,7 +702,6 @@ namespace SOLDIGusto
 
                 if (!string.IsNullOrEmpty(RetornoBalanca))
                 {
-                    MessageBox.Show($"Convertendo {RetornoBalanca}");
                     string somenteNumeros = Regex.Replace(RetornoBalanca, @"[^\d]", "");
                     RetornoBalanca = somenteNumeros;
                     //pesoBalanca = Funcoes.ConvertstrToDecimal(RetornoBalanca.Replace("\u0002", "").Replace("\u0003", "").Trim()) / 1000;
