@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SOLDIGusto.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -88,6 +89,12 @@ namespace SOLDIGusto
 
                 Mensagem PgMsg = new Mensagem("Transferencia Completa com sucesso!", "OK", null);
                 PgMsg.ShowDialog();
+                if (Parametros.usa_goomer)
+                {
+                    ComandaItemintegracao comandaintegracao = new ComandaItemintegracao();
+                    comandaintegracao.InserirTransferenciaComanda(TxtOrigem.Text, TxtDestino.Text, "terminalt8");
+
+                }
                 TxtDestino.Text = "";
                 TxtOrigem.Text = "";
             }
@@ -202,6 +209,8 @@ namespace SOLDIGusto
         private void BtnEnter_Click(object sender, EventArgs e)
         {
             try
+            
+            
             {
                 Teclado("{ENTER}");
             }

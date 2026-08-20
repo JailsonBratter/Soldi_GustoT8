@@ -41,6 +41,7 @@ class ComandaItemDAO
     public decimal Estoque { get; set; }
     public string Descrição { get; set; }
     public int Terminal { get; set; }
+    public string Idseq { get; set; }
 
     #endregion
 
@@ -87,6 +88,8 @@ class ComandaItemDAO
                 Obj.id = Funcoes.ConvertstrToInt(rs["id"].ToString());
                 Obj.Descrição = rs["DESCRICAO"].ToString();
                 Obj.Terminal = Funcoes.ConvertstrToInt(rs["Terminal"].ToString());
+                Obj.Idseq = rs["Idseq"].ToString();
+
 
                 ListaItens.Add(Obj);
             }
@@ -146,7 +149,7 @@ class ComandaItemDAO
                 Obj.id = Funcoes.ConvertstrToInt(rs["id"].ToString());
                 Obj.Descrição = rs["DESCRICAO"].ToString();
                 Obj.Terminal = Funcoes.ConvertstrToInt(rs["Terminal"].ToString());
-
+                Obj.Idseq = rs["Idseq"].ToString();
                 ListaItens.Add(Obj);
             }
 
@@ -534,6 +537,7 @@ class ComandaItemDAO
                 Obj.id = Funcoes.ConvertstrToInt(rs["id"].ToString());
                 Obj.Descrição = rs["DESCRICAO"].ToString();
                 Obj.Terminal = Funcoes.ConvertstrToInt(rs["Terminal"].ToString());
+                Obj.Idseq = rs["Idseq"].ToString();
 
                 DeletarItemComandaComOBS(Obj);
                 DeletarItemComanda(Obj);

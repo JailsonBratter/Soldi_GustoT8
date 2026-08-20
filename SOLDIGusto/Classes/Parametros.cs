@@ -135,6 +135,8 @@ class Parametros
     public static int Tipo_Etiqueta = 1;
     public static string Porta_balanca { get; set; }
     public static int Velocidade_porta = 2400;
+    public static bool usa_goomer { get; set; }
+
 
 }
 

@@ -33,6 +33,8 @@
             this.BtnAjuda = new System.Windows.Forms.Button();
             this.TcConfig = new System.Windows.Forms.TabControl();
             this.TpGeral = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
+            this.TxtCaractereComanda = new System.Windows.Forms.TextBox();
             this.chkBloqueiaImpressao = new System.Windows.Forms.CheckBox();
             this.CbBarraDuplicada = new System.Windows.Forms.CheckBox();
             this.lblDigitosBarra = new System.Windows.Forms.Label();
@@ -210,8 +212,7 @@
             this.BtnTeclaM = new System.Windows.Forms.Button();
             this.BtnTeclaK = new System.Windows.Forms.Button();
             this.BtnTeclaN = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.TxtCaractereComanda = new System.Windows.Forms.TextBox();
+            this.CbGOOMER = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.TcConfig.SuspendLayout();
             this.TpGeral.SuspendLayout();
@@ -275,6 +276,7 @@
             // TpGeral
             // 
             this.TpGeral.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TpGeral.Controls.Add(this.CbGOOMER);
             this.TpGeral.Controls.Add(this.label25);
             this.TpGeral.Controls.Add(this.TxtCaractereComanda);
             this.TpGeral.Controls.Add(this.chkBloqueiaImpressao);
@@ -309,6 +311,30 @@
             this.TpGeral.Size = new System.Drawing.Size(834, 539);
             this.TpGeral.TabIndex = 0;
             this.TpGeral.Text = "Geral";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label25.Location = new System.Drawing.Point(61, 396);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(197, 24);
+            this.label25.TabIndex = 565;
+            this.label25.Text = "Caractere Comanda";
+            // 
+            // TxtCaractereComanda
+            // 
+            this.TxtCaractereComanda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtCaractereComanda.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
+            this.TxtCaractereComanda.ForeColor = System.Drawing.Color.Black;
+            this.TxtCaractereComanda.Location = new System.Drawing.Point(65, 423);
+            this.TxtCaractereComanda.MaxLength = 1;
+            this.TxtCaractereComanda.Name = "TxtCaractereComanda";
+            this.TxtCaractereComanda.Size = new System.Drawing.Size(55, 34);
+            this.TxtCaractereComanda.TabIndex = 564;
+            this.TxtCaractereComanda.Tag = "2";
+            this.TxtCaractereComanda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chkBloqueiaImpressao
             // 
@@ -3017,29 +3043,17 @@
             this.BtnTeclaN.UseVisualStyleBackColor = false;
             this.BtnTeclaN.Click += new System.EventHandler(this.BtnTecla_Click);
             // 
-            // label25
+            // CbGOOMER
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label25.Location = new System.Drawing.Point(61, 396);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(197, 24);
-            this.label25.TabIndex = 565;
-            this.label25.Text = "Caractere Comanda";
-            // 
-            // TxtCaractereComanda
-            // 
-            this.TxtCaractereComanda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtCaractereComanda.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
-            this.TxtCaractereComanda.ForeColor = System.Drawing.Color.Black;
-            this.TxtCaractereComanda.Location = new System.Drawing.Point(65, 423);
-            this.TxtCaractereComanda.MaxLength = 1;
-            this.TxtCaractereComanda.Name = "TxtCaractereComanda";
-            this.TxtCaractereComanda.Size = new System.Drawing.Size(55, 34);
-            this.TxtCaractereComanda.TabIndex = 564;
-            this.TxtCaractereComanda.Tag = "2";
-            this.TxtCaractereComanda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.CbGOOMER.AutoSize = true;
+            this.CbGOOMER.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.CbGOOMER.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CbGOOMER.Location = new System.Drawing.Point(62, 465);
+            this.CbGOOMER.Name = "CbGOOMER";
+            this.CbGOOMER.Size = new System.Drawing.Size(118, 22);
+            this.CbGOOMER.TabIndex = 566;
+            this.CbGOOMER.Text = "Usa Goomer";
+            this.CbGOOMER.UseVisualStyleBackColor = true;
             // 
             // Configuracao
             // 
@@ -3258,5 +3272,6 @@
         private System.Windows.Forms.CheckBox chkBloqueiaImpressao;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox TxtCaractereComanda;
+        private System.Windows.Forms.CheckBox CbGOOMER;
     }
 }

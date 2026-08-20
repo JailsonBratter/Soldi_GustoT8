@@ -88,6 +88,7 @@ namespace SOLDIGusto
                     Parametros.Solicita_Motivo = Obj.Solicita_Motivo;
                     Parametros.Filial = Obj.Filial;
                     Parametros.Pct_Calculo = Obj.Pct_calculo;
+                    Parametros.usa_goomer  = Obj.usa_goomer;
 
                     Parametros.Cod_Btn01 = Obj.Cod_BtnAtalho1;
                     Parametros.Desc_Btn01 = Obj.Desc_ProdAtalho1;

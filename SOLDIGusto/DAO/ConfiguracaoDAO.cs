@@ -85,6 +85,7 @@ class ConfiguracaoDAO
     public bool BloqueiaImpressao { get; set; }
     public string CaractereComanda { get; set; } = "W";
 
+    public bool usa_goomer { get; set; }
     #endregion
 
     /// <summary>
@@ -177,6 +178,7 @@ class ConfiguracaoDAO
                 Obj.CodigoBarrasDuplicadoDigitos = Funcoes.ConvertstrToInt(rs["Codigo_Barras_Duplicado_Digitos"].ToString());
                 Obj.BloqueiaImpressao = Funcoes.ConvertstrToBoolean(rs["Bloqueia_Impressao"].ToString());
                 Obj.CaractereComanda = rs["Caractere_Comanda"].ToString();
+                Obj.usa_goomer = Funcoes.ConvertstrToBoolean(rs["usa_goomer"].ToString());
 
             }
             return Obj;
@@ -350,6 +352,7 @@ class ConfiguracaoDAO
 
                 Sql.Append(", " + Funcoes.ConvertBoolToBit(Obj.BloqueiaImpressao));
                 Sql.Append(", '" + Obj.CaractereComanda + "'");
+                Sql.Append("," + Funcoes.ConvertBoolToBit(Obj.usa_goomer));
                 Sql.Append(")");
                 //Executando o comando
                 bool retorno = Conexao.executarSql(Sql.ToString());
@@ -470,6 +473,7 @@ class ConfiguracaoDAO
                 Sql.Append(",Codigo_Barras_Duplicado=" + Funcoes.ConvertBoolToBit(Obj.CodigoBarrasDuplicado));
                 Sql.Append(",Bloqueia_Impressao=" + Funcoes.ConvertBoolToBit(Obj.BloqueiaImpressao));
                 Sql.Append(", Caractere_Comanda= '" + Obj.CaractereComanda + "'");
+                Sql.Append(",usa_goomer=" + Funcoes.ConvertBoolToBit(Obj.usa_goomer));
 
                 Sql.Append(" where ID=" + Obj.ID);
                 Sql.Append(" AND Filial ='" + Obj.Filial + "'");

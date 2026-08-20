@@ -94,6 +94,7 @@
     <Compile Include="DAO\ComandaControleDAO.cs" />
     <Compile Include="DAO\ComandaDAO.cs" />
     <Compile Include="DAO\ComandaItemDAO.cs" />
+    <Compile Include="DAO\ComandaItemintegracao.cs" />
     <Compile Include="DAO\ComandaItemObsDAO.cs" />
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\ConfiguracaoDAO.cs" />

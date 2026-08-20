@@ -165,7 +165,7 @@ namespace SOLDIGusto
                 CbBarraDuplicada.Checked = Parametros.Codigo_Barras_Duplicado;
                 TxtBarraDuplicadaDigitos.Text = Parametros.Codigo_Barras_Duplicado_Digitos.ToString();
                 chkBloqueiaImpressao.Checked = Parametros.Bloqueia_Impressao;
-
+                CbGOOMER.Checked = Parametros.usa_goomer;
                 if (Parametros.Terminal > 0)
                     TxtTerminal.Text = Parametros.Terminal.ToString();
 
@@ -300,6 +300,7 @@ namespace SOLDIGusto
                 Parametros.Codigo_Barras_Duplicado = CbBarraDuplicada.Checked;
                 Parametros.Codigo_Barras_Duplicado_Digitos = Funcoes.ConvertstrToInt(TxtBarraDuplicadaDigitos.Text);
                 Parametros.Bloqueia_Impressao = chkBloqueiaImpressao.Checked;
+                Parametros.usa_goomer = CbGOOMER.Checked;
 
                 //Botões
                 #region Btn atalho
@@ -456,7 +457,7 @@ namespace SOLDIGusto
                     Solicita_Motivo = CbMotivoCan.Checked,
                     Filial = TxtFilial.Text,
                     Delivery = CbDelivery.Checked,
-
+                    usa_goomer = CbGOOMER.Checked,  
                     Trata_Comanda = CbTrataCom.Checked,
                     Com_RetiraCluna = Funcoes.ConvertstrToInt(TxtRetiraColuna.Text),
                     Divide_conta = CbDivideConta.Checked,
@@ -533,6 +534,7 @@ namespace SOLDIGusto
                     CodigoBarrasDuplicadoDigitos = Funcoes.ConvertstrToInt(TxtBarraDuplicadaDigitos.Text),
                     BloqueiaImpressao = chkBloqueiaImpressao.Checked,
                     CaractereComanda = TxtCaractereComanda.Text.ToUpper()
+                 
 
 
                 };

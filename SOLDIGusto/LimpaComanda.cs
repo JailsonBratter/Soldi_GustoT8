@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SOLDIGusto.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -149,6 +150,11 @@ namespace SOLDIGusto
                     Obj.comanda = Funcoes.ConvertstrToInt(Com);
                     Obj.AtualizarComandaControle(Obj);
 
+                    if (Parametros.usa_goomer)
+                    {
+                        ComandaItemintegracao comadaitemintegra = new ComandaItemintegracao();
+                        comadaitemintegra.InserirCancelamentoTotalComanda(Obj.comanda.ToString(), "TerminalT8");
+                    }
                     GwItens.DataSource = null;
                     lblCom.Text = "";
                     txtTotal.Text = "0,00";
@@ -335,6 +341,11 @@ namespace SOLDIGusto
                         Obj.Usuario_Cancelamento = ((Home)Application.OpenForms["Home"]).LblOperador.Text;
                         Obj.CancelarItemComanda(Obj);
                         TxtComanda.Text = Obj.comanda.ToString();
+                        if (Parametros.usa_goomer)
+                        {
+                           ComandaItemintegracao cmdin = new ComandaItemintegracao();
+                            cmdin.InserirCancelamentoItem(Obj.comanda, Obj.plu, Obj.id, Obj.qtde, Obj.Idseq, "TerminalT8");
+                        }
                         BuscarItens();
                     }
                     
