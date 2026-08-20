@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -659,53 +660,68 @@ namespace SOLDIGusto
 
         private decimal PegarPeso()
         {
+            decimal pesoBalanca = 0;
             try
             {
 
                 if (port == null)
                 {
+                    MessageBox.Show($"Porta {Parametros.Porta_balanca} da balança fechada");
                     port = new SerialPort(Parametros.Porta_balanca, Parametros.Velocidade_porta, Parity.None, 8, StopBits.One);
                     port.Open();
                 }
                 if (!port.IsOpen )
                 {
+                    MessageBox.Show($"Porta {Parametros.Porta_balanca} da balança fechada");
                     port = new SerialPort(Parametros.Porta_balanca, Parametros.Velocidade_porta, Parity.None, 8, StopBits.One);
                     port.Open();
                 }
+                Thread.Sleep(30);
 
                 #region Balanca
 
                 //peso
                 byte[] buff = { 5 };
-                string RetornoBalanca = "";
+                //string RetornoBalanca = "";
+                MessageBox.Show($"Enviando comando para balança.");
 
-                Thread.Sleep(30);
                 port.Write(buff, 0, 1);
 
-                Thread.Sleep(100);
-                RetornoBalanca = port.ReadExisting();
-
+                Thread.Sleep(1000);
+                string RetornoBalanca = port.ReadExisting();
+                MessageBox.Show($"Retorno da balança: {RetornoBalanca}");
 
                 if (string.IsNullOrEmpty(RetornoBalanca))
                 {
-                    //port.Write(buff, 0, 1);
+                    MessageBox.Show($"Retorno Null");
                     int tempo = 0;
                     while (RetornoBalanca.Length == 0 || tempo < 100)
                     {
+                        //Thread.Sleep(5);
                         RetornoBalanca += port.ReadExisting();
-                        //if (tempo == 50000 && RetornoBalanca.Length == 0)
+                        //if (tempo == 1000 && RetornoBalanca.Length == 0)
                         //    RetornoBalanca = "0";
                         tempo++;
                     }
-                    //port.Close();
                 }
 
+                if (!string.IsNullOrEmpty(RetornoBalanca))
+                {
+                    MessageBox.Show($"Convertendo {RetornoBalanca}");
+                    string somenteNumeros = Regex.Replace(RetornoBalanca, @"[^\d]", "");
+                    RetornoBalanca = somenteNumeros;
+                    //pesoBalanca = Funcoes.ConvertstrToDecimal(RetornoBalanca.Replace("\u0002", "").Replace("\u0003", "").Trim()) / 1000;
+                    pesoBalanca = Funcoes.ConvertstrToDecimal(RetornoBalanca) / 1000;
+                }
 
-                string Peso = RetornoBalanca.Replace("\u0002", "").Replace("\u0003", "");
+                //port.Close();
+
+
+                //string Peso = RetornoBalanca.Replace("\u0002", "").Replace("\u0003", "");
 
                 #endregion
 
-                return Funcoes.ConvertstrToDecimal(Peso) / 1000;
+                return pesoBalanca;
             }
             catch (Exception err)
             {
